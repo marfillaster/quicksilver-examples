@@ -1,7 +1,7 @@
 <?php
 
 function qs_passthru($command) {
-    $wrappedCommand = sprintf('bash %s/trap.sh %s %s %s %s', __DIR__, 
+    $wrappedCommand = sprintf('bash %s/timer.sh %s %s %s %s', __DIR__, 
     escapeshellarg($_POST['wf_type'].':'.$_POST['stage'].':'.$_POST['trace_id']), sprintf('%s/logs/quicksilver.log', $_ENV['HOME']), escapeshellarg($_POST['qs_description']), $command);
     
     passthru($wrappedCommand, $return_var);
